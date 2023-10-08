@@ -1,0 +1,2 @@
+kf.kio.workers.file: copy() QUrl("file:///home/manjaro/Downloads/expand_more.svg") to QUrl("file:///home/manjaro/0/dev/elixir/phoenix/elixir_mentor/elixir_gist2/priv/static/images/expand_more.svg") mode= 420
+kf.kio.workers.file: the file doesn't have any xattr

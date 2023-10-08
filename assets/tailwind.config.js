@@ -14,15 +14,29 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        brand: "#ab34eb",
-        lavender: "#FD4F00"
+        emDark: {
+          dark: "#141414",
+          DEFAULT: "#2e2d2d",
+          light: "#4f4d4d",
+        },
+        emPurple: {
+          dark: "#571855",
+          DEFAULT: "#91278e",
+          light: "#d136cd",
+        },
+        emLavender: {
+          dark: "#331d47",
+          DEFAULT: "#553175",
+          light: "#7541a3",
+        }
       },
       fontFamily: {
-
+        brand: ["WorkSans", "sans-serif"],
       },
       fontWeight: {
-        original: normal,
-        bold: bold
+        regular: "normal",
+        bold: "bold"
+
       }
 
     },

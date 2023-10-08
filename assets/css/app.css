@@ -3,3 +3,26 @@
 @import "tailwindcss/utilities";
 
 /* This file is for your main application CSS */
+
+@font-face{
+  font-family: "WorkSans";
+  src: url("/fonts/WorkSans-Regular.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face{
+  font-family: "WorkSans";
+  src: url("/fonts/WorkSans-Bold.ttf");
+  font-weight: bold;
+  font-style: normal;
+}
+
+.search-input:focus{
+  outline:none
+}
+
+/* .hover-svg:hover{ */
+/*   filter: invert(30%) sepia(26%) saturate(1665%) hue-rotate(232deg) brightness(98%) contrast(94%) !important; */
+/* } */
+
