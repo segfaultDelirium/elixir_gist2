@@ -22,7 +22,24 @@
   outline:none
 }
 
+.menu-item{
+  @apply block px-4 py-1 hover:text-emLavender-light
+}
+
+.menu-item-bottom-border{
+  @apply border-b border-white border-opacity-50
+}
+
 /* .hover-svg:hover{ */
 /*   filter: invert(30%) sepia(26%) saturate(1665%) hue-rotate(232deg) brightness(98%) contrast(94%) !important; */
 /* } */
 
+.dropdown-menu-arrow::before{
+  content: "";
+  position: absolute;
+  top: -7px;
+  left: calc(95% - 50px);
+  border-width: 0 5px 5px 5px;
+  border-style: solid;
+  border-color: transparent transparent white transparent;
+}

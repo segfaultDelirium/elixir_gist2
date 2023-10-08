@@ -16,7 +16,10 @@
     </a>
   </div>
   <div>
-    <a class="flex-row relative flex" href={~p"/"}>
+    <button
+      class="flex-row relative flex items-center"
+      phx-click={ElixirGist2Web.Layout.App.toggle_dropdown_menu()}
+    >
       <img
         src="/images/profile-picture_small.jpeg"
         class="rounded-full h-10 w-10 border-2 
@@ -27,12 +30,93 @@
         src="/images/expand_more.svg"
         style="filter: invert(100%) sepia(1%) saturate(335%) hue-rotate(65deg) brightness(114%) contrast(100%);"
       />
-    </a>
+    </button>
+    <div
+      id="dropdown_menu"
+      class="border-white border-2 absolute 
+      dropdown-menu-arrow
+      py-2 w-78 bg-emDark rounded-lg shadow-xl
+      px-2 "
+      hidden="true"
+      style="transform: translate(-150px, 10px);"
+    >
+      <%= if @current_user do %>
+        <.link
+          href={~p"/user/log_out"}
+          role="menuitem"
+          tabindex="-1"
+          method="delete"
+          class="menu-item menu-item-bottom-border"
+          id="user-menu-item-0"
+        >
+          Signed in as <%= @current_user.email %>
+        </.link>
+
+        <.link
+          href={~p"/user/log_out"}
+          role="menuitem"
+          tabindex="-1"
+          method="delete"
+          class="menu-item "
+          id="user-menu-item-1"
+        >
+          Your gists
+        </.link>
+
+        <.link
+          href={~p"/user/log_out"}
+          role="menuitem"
+          tabindex="-1"
+          method="get"
+          class="menu-item menu-item-bottom-border"
+          id="user-menu-item-2"
+        >
+          Saved gists
+        </.link>
+
+        <.link
+          href={~p"/user/log_out"}
+          role="menuitem"
+          tabindex="-1"
+          method="delete"
+          class="menu-item "
+          id="user-menu-item-3"
+        >
+          Sign out
+        </.link>
+      <% else %>
+        <div class="flex flex-col">
+          <.link
+            href={~p"/user/log_in"}
+            role="menuitem"
+            tabindex="-1"
+            method="get"
+            class="menu-item border-b border-white border-opacity-50"
+            id="user-menu-item-0"
+          >
+            Sign in
+          </.link>
+          <.link
+            href={~p"/user/register"}
+            role="menuitem"
+            tabindex="-1"
+            method="get"
+            class="menu-item"
+            id="user-menu-item-1"
+          >
+            Register
+          </.link>
+        </div>
+      <% end %>
+    </div>
   </div>
 </header>
-<main class="px-4 py-20 sm:px-6 lg:px-8">
-  <div class="mx-auto max-w-2xl">
-    <.flash_group flash={@flash} />
-    <%= @inner_content %>
-  </div>
+<div>
+  <!-- px-4 py-20 sm:px-6 lg:px-8 -->
+</div>
+<main>
+  <.flash_group flash={@flash} />
+  <%= @inner_content %>
+  <!-- <div class="mx-auto max-w-2xl"> -->
+  <!-- </div> -->
 </main>
